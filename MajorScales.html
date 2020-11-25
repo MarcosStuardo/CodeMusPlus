@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<!-- In this app, the user is asked to input the name of the major scale they need. As a result,
+they will be provided with the component pitches of the desired scale. -->
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+    body{
+      background-color: #212529;
+    }
+    body{
+      font-family: 'Gelasio', serif;
+      }
+    #navbar{
+      color: #e9ecef;
+    }
+    #title {
+      color: #e9ecef;
+    }
+    .form-group {
+      color: #e9ecef;
+    }
+    #contain{
+      padding: 25px 150px 25px 150px;
+      background-color: #212529
+    }
+    label{
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    }
+    #allNotes{
+      color: #e9ecef;
+      font-size: 33px;
+    }
+    #pOne{
+      color: #e9ecef;
+      font-size: 33px;
+    }
+    #pTwo{
+      color: #e9ecef;
+      font-size: 33px;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container">
+        <a id="navbar" class="navbar-brand" href="https://www.linkedin.com/in/stuardocomposer/">Hello!</a>
+        <a id="navbar" class="navbar-brand" href="https://soundcloud.com/stuardo">Music!</a>
+      </div>
+    </nav>
+
+    <div id="contain" class="jumbotron">
+      <div class="container">
+          <h1 id="title" >Which major scale would you like to know?</h1>
+            <div id= "which" class="form-group">
+            <label for="Input">Which scale?</label><input type="text" id="scaleInput" class="scaleInput" placeholder="i.e. C# or Eb">
+            <input type="submit" value="Click here!" class="rootNote">
+            <br>
+            <div class="paragraphs">
+              <br>
+              <p id="allNotes" class="allNotes"></p>
+              <p id="pOne" class ="pOne"></p>
+              <p id=pTwo class ="pTwo"></p>
+            </div>
+          </div>
+        </div>
+          <div id="jumbo" class="jumbotron">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 col-xs-6 thumbnail"><img src="https://pbs.twimg.com/media/Ecp04sVWsAAQzqG.jpg" class="img-thumbnail img-responsive" alt=""></div>
+                <div class="col-lg-4 col-xs-6 thumbnail"><img src="https://pbs.twimg.com/media/Ecp04sVWsAAQzqG.jpg" class="img-thumbnail img-responsive" alt=""></div>
+                <div class="col-lg-4 col-xs-6 thumbnail"><img src="https://pbs.twimg.com/media/Ecp04sVWsAAQzqG.jpg" class="img-thumbnail img-responsive" alt=""></div>
+              </div>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+
+        var inTextScale = document.querySelector(".allNotes");
+        var inTextOne = document.querySelector(".pOne");
+        var inTextTwo = document.querySelector(".pTwo");
+        var getScale =  document.querySelector(".rootNote");
+
+              function majScale(){
+
+              var tone = document.querySelector(".scaleInput").value;
+                  if  (tone === "C") {
+                    inTextScale.textContent = "C Major Scale";
+                    inTextOne.textContent = "Component pitches: C-D-E-F-G-A-B";
+                    inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "G") {
+                   inTextScale.textContent = "G Major Scale";
+                   inTextOne.textContent = "Component pitches: G-A-B-C-D-E-F#";
+                   inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "D") {
+                  inTextScale.textContent = "D Major Scale";
+                  inTextOne.textContent = "Component pitches: D-E-F#-G-A-B-C#";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "A") {
+                  inTextScale.textContent = "A Major Scale";
+                  inTextOne.textContent = "Component pitches: A-B-C#-D-E-F#-G#";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "E") {
+                  inTextScale.textContent = "E Major Scale";
+                  inTextOne.textContent = "Component pitches: E-F#-G#-A-B-C#-D#";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "B") {
+                  inTextScale.textContent = "B Major Scale";
+                  inTextOne.textContent = "Component pitches: B-C#-D#-E-F#-G#-A#";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "F#") {
+                  inTextScale.textContent = "F# Major Scale";
+                  inTextOne.textContent = "Component pitches: F#-G#-A#-B-C#-D#-E#";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "C#") {
+                  inTextScale.textContent = "C# Major Scale";
+                  inTextOne.textContent = "Component pitches: C#-D#-E#-F#-G#-A#-B#";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "F") {
+                  inTextScale.textContent = "F Major Scale";
+                  inTextOne.textContent = "Component pitches: F-G-A-Bb-C-D-E";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "Bb") {
+                  inTextScale.textContent = "B-Flat Major Scale";
+                  inTextOne.textContent = "Component pitches: Bb-C-D-Eb-F-G-A";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "Eb") {
+                  inTextScale.textContent = "E-Flat Major Scale";
+                  inTextOne.textContent = "Component pitches: Eb-F-G-Ab-Bb-C-D";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "Eb") {
+                  inTextScale.textContent = "E-Flat Major Scale";
+                  inTextOne.textContent = "Component pitches: Eb-F-G-Ab-Bb-C-D";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "Ab") {
+                  inTextScale.textContent = "A-Flat Major Scale";
+                  inTextOne.textContent = "Component pitches: Ab-Bb-C-Db-Eb-F-G";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "Db") {
+                  inTextScale.textContent = "D-Flat Major Scale";
+                  inTextOne.textContent = "Component pitches: Db-Eb-F-Gb-Ab-Bb-C";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "Gb") {
+                  inTextScale.textContent = "G-Flat Major Scale";
+                  inTextOne.textContent = "Component pitches: Gb-Ab-Bb-Cb-Db-Eb-F";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else if (tone === "Cb") {
+                  inTextScale.textContent = "C-Flat Major Scale";
+                  inTextOne.textContent = "Component pitches: Cb-Db-Eb-Fb-Gb-Ab-Bb";
+                  inTextTwo.textContent = "Refresh to start again.";
+                } else {
+                  inTextOne.textContent = "Refresh and try again!";
+               }
+           }
+          getScale.addEventListener('click', majScale);
+        </script>
+  </body>
+</html>
